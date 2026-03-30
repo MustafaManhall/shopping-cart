@@ -20,11 +20,12 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   background-image: url("../public/image-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: "PT Serif", Helvetica, sans-serif;
 }
