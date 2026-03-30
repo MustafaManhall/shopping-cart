@@ -16,10 +16,14 @@ export default function ProductCard({ data }: { data: Product }) {
     if (value >= 1) setQuantity(value);
   }
   function handleAddQuantity() {
-    setQuantity(quantity + 1);
+    if (quantity >= 1 && quantity < 10) {
+      setQuantity(quantity + 1);
+    }
   }
   function handleMinusQuantity() {
-    setQuantity(quantity - 1);
+    if (quantity > 1 && quantity <= 10) {
+      setQuantity(quantity - 1);
+    }
   }
   return (
     <div
@@ -57,8 +61,9 @@ export default function ProductCard({ data }: { data: Product }) {
             value={quantity}
             onChange={handleQuantity}
             min={1}
+            max={10}
             required
-            className="w-1/2 bg-[#1A1A1A] border border-[#2A2A2A] focus:border-[#C9A84C] text-[#ffffff] placeholder:text-[#555555] text-center text-xl rounded-2xl"
+            className="min-w-full bg-[#1A1A1A] border border-[#2A2A2A] focus:border-[#C9A84C] text-[#ffffff] placeholder:text-[#555555] text-center text-xl rounded-2xl"
           />
           <button onClick={handleMinusQuantity} className="w-fit h-full">
             <AiOutlineMinusCircle className="w-8 h-8" />
