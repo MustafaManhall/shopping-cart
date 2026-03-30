@@ -1,8 +1,13 @@
+"use client";
+
+import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function Navbar() {
+  const { cartList } = useCart();
+  
   return (
     <>
       <nav className="flex justify-between items-center p-6 m-6 border-2 border-[#f4efe814] rounded-3xl h-24 bg-[#0807066b]">
@@ -14,7 +19,7 @@ export default function Navbar() {
           <li><Link href="/shop" className="text-xl text-[#C5C0B8] hover:text-[#C9A96E]">Shop</Link></li>
         </ul>
         <div className="w-8 h-8">
-          <Link href="/cart"><AiOutlineShoppingCart className="w-8 h-8 text-[#C5C0B8] hover:text-[#C9A96E]"/></Link>
+          <Link href="/cart"><AiOutlineShoppingCart className="w-8 h-8 text-[#C5C0B8] hover:text-[#C9A96E]"/>{cartList.length}</Link>
         </div>
       </nav>
     </>
