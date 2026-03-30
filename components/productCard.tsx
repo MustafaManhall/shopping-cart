@@ -26,24 +26,26 @@ export default function ProductCard({ data }: { data: Product }) {
       key={data.id}
       className="flex flex-col w-xs border rounded-xl border-[#2A2A2A] hover:border-[#c9a96e60] bg-[#0F0F0F] hover:bg-[#131313] p-4 m-2"
     >
-      <div className="relative w-full h-64">
-        <Image
-          src={data.image}
-          alt={"data.title"}
-          fill
-          loading="eager"
-          style={{ objectFit: "contain" }}
-        />
+      <div className="h-full">
+        <div className="relative w-full h-64">
+          <Image
+            src={data.image}
+            alt={"data.title"}
+            fill
+            loading="eager"
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+        <div className="flex flex-col pt-4 pr-4 pl-4 gap-2 justify-between">
+          <p className="text-sm first-letter:uppercase text-[#c9a96e]">
+            {data.category}
+          </p>
+          <h1 className="text-2xl">{data.title}</h1>
+          <p className="text-sm line-clamp-2">{data.description}</p>
+        </div>
       </div>
-      <div className="flex flex-col gap-2 p-4">
-        <p className="text-sm first-letter:uppercase text-[#c9a96e]">
-          {data.category}
-        </p>
-        <h1 className="text-2xl">{data.title}</h1>
-        <p className="text-sm line-clamp-2">{data.description}</p>
-        <p className="text-[#c9a96e] text-2xl self-end">${data.price}</p>
-      </div>
-      <div className="flex flex-col flex-1 justify-center items-center">
+      <div className="flex flex-col flex-1 justify-center items-center gap-2">
+        <p className="text-[#c9a96e] text-2xl self-end m-4">${data.price}</p>
         <div className="flex flex-1 justify-center items-center gap-2">
           <button onClick={handleAddQuantity} className="w-fit h-full">
             <IoAddCircleOutline className="w-8 h-8" />
