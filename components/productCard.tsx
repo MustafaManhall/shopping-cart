@@ -28,7 +28,7 @@ export default function ProductCard({ data }: { data: Product }) {
   return (
     <div
       key={data.id}
-      className="flex flex-col w-xs border rounded-xl border-[#2A2A2A] hover:border-[#c9a96e60] bg-[#0F0F0F] hover:bg-[#131313] p-4 m-2"
+      className="flex flex-col w-xs max-[35rem]:w-2xs border rounded-xl border-[#2A2A2A] hover:border-[#c9a96e60] bg-[#0F0F0F] hover:bg-[#131313] p-4 m-2"
     >
       <div className="h-full">
         <div className="relative w-full h-64">

@@ -16,7 +16,7 @@ export default function Cart() {
   );
 
   return (
-    <main className="fixed top-0 right-0 h-full w-1/3 z-40 bg-black/70">
+    <main className="fixed top-0 right-0 h-full w-1/3 max-2xl:w-1/2 max-lg:w-2/3 max-md:w-full max-md:bg-black z-40 bg-black/70">
       <div className="flex justify-between p-8 sticky top-0 bg-black">
         <h1 className="text-2xl">Cart</h1>
         <button onClick={closeCart}>
@@ -29,9 +29,9 @@ export default function Cart() {
             return (
               <div
                 key={item.product.id}
-                className="flex w-full justify-start items-center flex-1 p-2 border border-[#2A2A2A] hover:border-[#C9A84C] rounded-2xl"
+                className="flex w-full justify-start items-center flex-1 p-2 border border-[#2A2A2A] hover:border-[#C9A84C] rounded-2xl max-sm:flex-col"
               >
-                <div className="relative h-28 w-28">
+                <div className="relative h-28 w-28 max-sm:h-40 max-sm:w-40">
                   <Image
                     src={item.product.image}
                     alt={"data.title"}
@@ -40,7 +40,7 @@ export default function Cart() {
                     style={{ objectFit: "contain" }}
                   />
                 </div>
-                <div className="flex flex-col flex-1 p-2 justify-start">
+                <div className="flex flex-col flex-1 p-2 justify-start max-sm:w-full">
                   <div className="flex justify-between items-center pr-2 pl-2">
                     <p className="text-sm first-letter:uppercase text-[#c9a96e]">
                       {item.product.category}
@@ -49,9 +49,9 @@ export default function Cart() {
                       <MdDeleteOutline className="w-8 h-8 fill-red-500" />
                     </button>
                   </div>
-                  <div className="flex flex-1 w-full justify-between">
+                  <div className="flex flex-1 w-full justify-between max-sm:flex-col">
                     <div className="flex flex-col gap-2 p-2">
-                      <h1 className="text-2xl">{item.product.title}</h1>
+                      <h1 className="text-2xl max-sm:text-xl">{item.product.title}</h1>
                       <div className="flex justify-start items-center gap-2 w-full">
                         <button
                           onClick={() =>
@@ -68,7 +68,7 @@ export default function Cart() {
                           min={1}
                           max={10}
                           disabled
-                          className="w-40 bg-[#1A1A1A] border border-[#2A2A2A] text-[#ffffff] text-center text-xl rounded-2xl"
+                          className="w-40 max-sm:w-full bg-[#1A1A1A] border border-[#2A2A2A] text-[#ffffff] text-center text-xl rounded-2xl"
                         />
                         <button
                           onClick={() =>

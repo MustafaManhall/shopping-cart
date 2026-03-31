@@ -19,10 +19,10 @@ export default function Home() {
     <main className="flex justify-center flex-1 flex-col gap-12 bg-linear-to-b from-black/0 via-black/50 to-black/80">
       <div className="flex justify-center items-center flex-col gap-4">
         <div className="flex items-center flex-col">
-          <h1 className="text-7xl text-center mb-4 max-w-lg">
+          <h1 className="text-7xl max-md:text-5xl text-center mb-4 max-w-lg">
             The Art of <span className="text-[#B8925E]">Refined Noir</span>
           </h1>
-          <p className="text-[#E8DDD0] text-xl text-center max-w-xl">
+          <p className="text-[#E8DDD0] text-xl max-md:text-lg max-sm:p-4 text-center max-w-xl">
             A curated philosophy of quiet luxury for the modern minimalist.
             Designed to eliminate fatigue through timeless uniform excellence.
           </p>
@@ -34,12 +34,12 @@ export default function Home() {
           Discover the vision
         </Link>
       </div>
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex justify-center items-center gap-8 max-md:flex-col">
         {cardsInfo.map((data) => {
           return (
             <div
               key={data.id}
-              className="rounded-2xl flex justify-center items-center flex-col gap-4 w-xs p-8 bg-[#ffffff08] hover:bg-[#ffffff0d] border border-[#ffffff14] hover:border-[#c9a96e40]"
+              className="rounded-2xl flex justify-center items-center flex-col gap-4 w-xs max-sm:w-2xs p-8 max-sm:p-6 bg-[#ffffff08] hover:bg-[#ffffff0d] border border-[#ffffff14] hover:border-[#c9a96e40]"
             >
               <h6 className="text-[#C9A96E]">0{data.id} / 0{cardsInfo.length}</h6>
               <h2 className="text-2xl" >{data.title}</h2>
