@@ -8,6 +8,7 @@ const CartContext = createContext<CartContextType>({
   cartList: [],
   addToCart: () => {},
   removeFromCart: () => {},
+  updateQuantity: () => {},
 });
 
 export function useCart() {
@@ -35,8 +36,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const newArr = cartList.filter((item) => item.product.id !== id);
     setCartList(newArr);
   }
+  function updateQuantity(id: number, newQuantity: number) {
+    if ((newQuantity >= 1 && newQuantity < 10 ) || (newQuantity > 1 && newQuantity <= 10)) {
+      setCartList(
+        cartList.map((item) =>
+          item.product.id === id ? { ...item, quantity: newQuantity } : item,
+        ),
+      );
+    }
+  }
   return (
-    <CartContext.Provider value={{ cartList, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cartList, addToCart, removeFromCart, updateQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );
