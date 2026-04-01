@@ -19,6 +19,10 @@
   }
 }
 
+html {
+  background-color: #0A0806;
+}
+
 body {
   color: var(--foreground);
   font-family: "PT Serif", Helvetica, sans-serif;
