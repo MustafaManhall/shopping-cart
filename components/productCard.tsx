@@ -33,7 +33,7 @@ export default function ProductCard({ data }: { data: Product }) {
       <div className="h-full">
         <div className="relative w-full h-64">
           <Image
-            src={data.image}
+            src={data.images?.[0] ?? data.thumbnail}
             alt={"data.title"}
             fill
             loading="eager"

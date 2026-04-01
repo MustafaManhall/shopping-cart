@@ -33,7 +33,7 @@ export default function Cart() {
               >
                 <div className="relative h-28 w-28 max-sm:h-40 max-sm:w-40">
                   <Image
-                    src={item.product.image}
+                    src={item.product.images?.[0] ?? item.product.thumbnail}
                     alt={"data.title"}
                     fill
                     loading="eager"
