@@ -20,12 +20,18 @@
 }
 
 body {
+  color: var(--foreground);
+  font-family: "PT Serif", Helvetica, sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
   background-color: var(--background);
   background-image: url("../public/image-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
-  color: var(--foreground);
-  font-family: "PT Serif", Helvetica, sans-serif;
+  z-index: -1;
 }
